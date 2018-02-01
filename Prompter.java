@@ -17,5 +17,9 @@ public class Prompter {
         char guess = guessInput.charAt(0);              // take char at position 0
         return game.applyGuess(guess);                  // sending our char to the game class and invoking applyGuess function on guess char
     }
+
+    public void displayProgress(){
+        System.out.printf("Try to solve :  %s%n", game.getCurrentProgress());      // accessing getCurrentProgress method in Hangman
+    }
     
 }

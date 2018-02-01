@@ -18,4 +18,18 @@ public class Game {
         }
         return isHit;                                   // return true if found else ret false
     }
+
+    public String getCurrentProgress(){
+        String progress = "";                           // temp string to add to
+        
+        for(char letter : answer.toCharArray()){
+            char display = '-';
+            if(hits.indexOf(letter) != -1){
+                display = letter;
+            }
+            progress += display;                        // add HIT letters to our temp string
+        }
+        return progress;
+    }
+
 }
