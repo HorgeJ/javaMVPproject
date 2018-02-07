@@ -1,4 +1,5 @@
 public class Game {
+    public static final int MAX_MISSES = 7;         // This variable is CONST and can't be changed
     private String answer;
     private String hits;
     private String misses;  
@@ -6,7 +7,7 @@ public class Game {
     public Game(String answer){     //Answer object constructer, accepts an answer arg
         this.answer = answer;       // Ous objects answer var == passed in answer var
         hits = "";                  // Intialize hits string to empty
-        misses = "";                // Initialize misses string to empty
+        misses = "";                // Initialize misses string to empty, will use .length method to keep track of total misses
     }
 
     public boolean applyGuess(char letter){
@@ -17,6 +18,10 @@ public class Game {
             misses += letter;                           // concatinate miss to misses String
         }
         return isHit;                                   // return true if found else ret false
+    }
+
+    public int getRemainingTries(){                     // Will compute and return the number of remaining tries
+        return MAX_MISSES - misses.length();
     }
 
     public String getCurrentProgress(){

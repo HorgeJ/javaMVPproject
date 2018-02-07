@@ -19,6 +19,7 @@ public class Prompter {
     }
 
     public void displayProgress(){
+        System.out.printf("You have %d tries left%n", game.getRemainingTries());
         System.out.printf("Try to solve :  %s%n", game.getCurrentProgress());      // accessing getCurrentProgress method in Hangman
     }
     
